@@ -1,153 +1,118 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Laptop Avenue</title>
-<style>
-  body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; color:#333;}
-  header {background:#0056b3; color:#fff; padding:1rem 2rem; text-align:center;}
-  nav a {color:#fff; margin: 0 15px; text-decoration:none; font-weight:bold;}
-  nav a:hover {text-decoration: underline;}
-  .container {max-width: 900px; margin: 2rem auto; background:#fff; padding: 2rem; border-radius: 8px;}
-  h1, h2, h3 {color: #0056b3;}
-  ul {list-style:none; padding:0;}
-  ul li {margin-bottom: 10px;}
-  .product, .service {border:1px solid #ccc; padding: 1rem; margin-bottom: 1rem; border-radius: 6px; background:#fafafa;}
-  .contact-info p {margin: 0.5rem 0;}
-  footer {text-align:center; padding:1rem; background:#eee; margin-top:2rem;}
-  .btn-contact {background:#0056b3; color:#fff; padding: 0.5rem 1rem; border:none; border-radius:4px; text-decoration:none;}
-  .btn-contact:hover {background:#003f7f;}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laptop Avenue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #0d47a1;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .banner {
+      background: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .section {
+      padding: 2rem;
+      background: white;
+      margin: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .products img {
+      height: 100px;
+      margin: 0 1rem;
+    }
+    .map {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+    footer {
+      background: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .contact-icons img {
+      height: 30px;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?crop=entropy&cs=tinysrgb&fit=crop&h=50&q=80&w=50" alt="Laptop Avenue Logo">
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>Laptop Avenue</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <div class="banner">
+    All HP, Dell & Lenovo Laptops Available
+  </div>
 
-<section id="home" class="container">
-  <h2>Welcome to Laptop Avenue</h2>
-  <p>Your trusted store for HP, Dell, Lenovo laptops, digital products, and full laptop & desktop repair services.</p>
-  <p>Located in Gurugram, Haryana. We accept UPI payments online and card payments in-store.</p>
-</section>
+  <div class="section" id="products">
+    <h2>Our Products</h2>
+    <div class="products">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/HP_logo_2012.svg" alt="HP" height="50">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" height="50">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Lenovo_logo_2015.svg" alt="Lenovo" height="50">
+      <p>We offer the latest laptops from HP, Dell, and Lenovo with servicing options available.</p>
+    </div>
+  </div>
 
-<section id="shop" class="container">
-  <h2>Shop Our Laptops</h2>
-  
-  <h3>HP Laptops</h3>
-  <div class="product">
-    <strong>HP Pavilion 15</strong><br />
-    i5, 8GB RAM, 512GB SSD<br />
-    Price: ₹52,000<br />
-    <a href="tel:9911420665" class="btn-contact">Contact to Buy</a>
+  <div class="section" id="services">
+    <h2>Services</h2>
+    <p>We provide expert repair and maintenance services for all types of laptops, desktops, and PCs. Both online and offline support available.</p>
   </div>
-  <div class="product">
-    <strong>HP Envy 13</strong><br />
-    i7, 16GB RAM, 1TB SSD<br />
-    Price: ₹85,000<br />
-    <a href="tel:9911420665" class="btn-contact">Contact to Buy</a>
-  </div>
-  
-  <h3>Dell Laptops</h3>
-  <div class="product">
-    <strong>Dell Inspiron 14</strong><br />
-    i3, 8GB RAM, 256GB SSD<br />
-    Price: ₹45,000<br />
-    <a href="tel:9911420665" class="btn-contact">Contact to Buy</a>
-  </div>
-  <div class="product">
-    <strong>Dell XPS 13</strong><br />
-    i7, 16GB RAM, 512GB SSD<br />
-    Price: ₹95,000<br />
-    <a href="tel:9911420665" class="btn-contact">Contact to Buy</a>
-  </div>
-  
-  <h3>Lenovo Laptops</h3>
-  <div class="product">
-    <strong>Lenovo ThinkPad E14</strong><br />
-    i5, 16GB RAM, 512GB SSD<br />
-    Price: ₹58,000<br />
-    <a href="tel:9911420665" class="btn-contact">Contact to Buy</a>
-  </div>
-  <div class="product">
-    <strong>Lenovo IdeaPad 3</strong><br />
-    i3, 8GB RAM, 256GB SSD<br />
-    Price: ₹40,000<br />
-    <a href="tel:9911420665" class="btn-contact">Contact to Buy</a>
-  </div>
-</section>
 
-<section id="services" class="container">
-  <h2>Our Repair Services</h2>
-  <div class="service">
-    <strong>SSD Upgrade</strong><br />
-    Speed up your system with a faster SSD.<br />
-    Contact for quote.<br />
-    <a href="tel:9911420665" class="btn-contact">Book Now</a>
+  <div class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 <strong>Phone:</strong> <a href="tel:9911420665">9911420665</a></p>
+    <p>📍 <strong>Address:</strong> Shop No. 6, near Tulip Purple, Sector 69, Gurugram, Haryana 122101</p>
+    <p>💳 <strong>Payments:</strong> UPI and card accepted</p>
+    <div class="contact-icons">
+      <a href="https://wa.me/919911420665" target="_blank">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp"> WhatsApp Us
+      </a>
+    </div>
+    <iframe class="map" src="https://www.google.com/maps?q=Tulip+Purple+Sector+69+Gurugram&output=embed"></iframe>
   </div>
-  <div class="service">
-    <strong>RAM Upgrade</strong><br />
-    Improve multitasking and performance.<br />
-    Contact for quote.<br />
-    <a href="tel:9911420665" class="btn-contact">Book Now</a>
-  </div>
-  <div class="service">
-    <strong>Screen Replacement</strong><br />
-    Fix cracked or damaged displays.<br />
-    Contact for quote.<br />
-    <a href="tel:9911420665" class="btn-contact">Book Now</a>
-  </div>
-  <div class="service">
-    <strong>Keyboard & Touchpad Repair</strong><br />
-    Fix broken or unresponsive parts.<br />
-    Contact for quote.<br />
-    <a href="tel:9911420665" class="btn-contact">Book Now</a>
-  </div>
-  <div class="service">
-    <strong>Virus Removal</strong><br />
-    Full cleanup and antivirus installation.<br />
-    Contact for quote.<br />
-    <a href="tel:9911420665" class="btn-contact">Book Now</a>
-  </div>
-  <div class="service">
-    <strong>General Maintenance</strong><br />
-    System optimization and cleaning.<br />
-    Contact for quote.<br />
-    <a href="tel:9911420665" class="btn-contact">Book Now</a>
-  </div>
-  <div class="service">
-    <strong>Motherboard Repair</strong><br />
-    Diagnosis and repair of critical hardware.<br />
-    Contact for quote.<br />
-    <a href="tel:9911420665" class="btn-contact">Book Now</a>
-  </div>
-  <div class="service">
-    <strong>Battery & Charging Port Fixes</strong><br />
-    Fix power-related issues.<br />
-    Contact for quote.<br />
-    <a href="tel:9911420665" class="btn-contact">Book Now</a>
-  </div>
-</section>
 
-<section id="contact" class="container">
-  <h2>Contact Us</h2>
-  <p><strong>Address:</strong> Shop No. 6, near Tulip Purple, Sector 69, Gurugram, Haryana – 122101</p>
-  <p><strong>Phone/WhatsApp:</strong> <a href="tel:9911420665">9911420665</a></p>
-  <p>We accept UPI payments online and card payments in-store.</p>
-  <p><a href="https://wa.me/919911420665" class="btn-contact" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a></p>
-</section>
-
-<footer>
-  <p>&copy; 2025 Laptop Avenue. All rights reserved.</p>
-</footer>
-
+  <footer>
+    &copy; 2025 Laptop Avenue. All rights reserved.
+  </footer>
 </body>
 </html>
