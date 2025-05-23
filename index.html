@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laptop Avenue</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -31,7 +31,7 @@
       font-weight: bold;
     }
     .banner {
-      background: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
       height: 300px;
       display: flex;
       align-items: center;
@@ -39,6 +39,7 @@
       color: white;
       font-size: 2rem;
       font-weight: bold;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
     }
     .section {
       padding: 2rem;
@@ -48,13 +49,28 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .products img {
-      height: 100px;
-      margin: 0 1rem;
+      height: 50px;
+      margin: 0 1rem 1rem 0;
+      vertical-align: middle;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      color: #0d47a1;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+      font-size: 1rem;
     }
     .map {
       width: 100%;
       height: 300px;
       border: none;
+      margin-top: 1rem;
+      border-radius: 8px;
     }
     footer {
       background: #0d47a1;
@@ -63,15 +79,23 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+    .contact-icons a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #0d47a1;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
     .contact-icons img {
       height: 30px;
-      margin-right: 10px;
+      margin-right: 8px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?crop=entropy&cs=tinysrgb&fit=crop&h=50&q=80&w=50" alt="Laptop Avenue Logo">
+    <img src="https://i.imgur.com/0wlxVKM.png" alt="Laptop Avenue Logo" />
     <nav>
       <a href="#products">Products</a>
       <a href="#services">Services</a>
@@ -86,29 +110,54 @@
   <div class="section" id="products">
     <h2>Our Products</h2>
     <div class="products">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/HP_logo_2012.svg" alt="HP" height="50">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" height="50">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Lenovo_logo_2015.svg" alt="Lenovo" height="50">
-      <p>We offer the latest laptops from HP, Dell, and Lenovo with servicing options available.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/HP_logo_2012.svg" alt="HP" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Lenovo_logo_2015.svg" alt="Lenovo" />
     </div>
+
+    <h3>Popular Laptop Models & Prices</h3>
+    <ul>
+      <li><strong>HP Pavilion 15</strong> - Starting at ₹45,000</li>
+      <li><strong>HP Envy x360</strong> - Starting at ₹70,000</li>
+      <li><strong>Dell Inspiron 14</strong> - Starting at ₹40,000</li>
+      <li><strong>Dell XPS 13</strong> - Starting at ₹95,000</li>
+      <li><strong>Lenovo IdeaPad 3</strong> - Starting at ₹35,000</li>
+      <li><strong>Lenovo ThinkPad X1 Carbon</strong> - Starting at ₹1,20,000</li>
+    </ul>
   </div>
 
   <div class="section" id="services">
     <h2>Services</h2>
     <p>We provide expert repair and maintenance services for all types of laptops, desktops, and PCs. Both online and offline support available.</p>
+    <p>Our full servicing includes:</p>
+    <ul>
+      <li>SSD and HDD replacement or upgrade</li>
+      <li>Virus and malware removal</li>
+      <li>Software installation and upgrading</li>
+      <li>Windows OS installation and updates</li>
+      <li>Hardware troubleshooting and repair</li>
+      <li>Data backup and recovery</li>
+      <li>Cleaning and maintenance</li>
+    </ul>
   </div>
 
   <div class="section" id="contact">
     <h2>Contact Us</h2>
     <p>📞 <strong>Phone:</strong> <a href="tel:9911420665">9911420665</a></p>
     <p>📍 <strong>Address:</strong> Shop No. 6, near Tulip Purple, Sector 69, Gurugram, Haryana 122101</p>
-    <p>💳 <strong>Payments:</strong> UPI and card accepted</p>
+    <p>💳 <strong>Payments:</strong> UPI accepted, card accepted sometimes</p>
     <div class="contact-icons">
-      <a href="https://wa.me/919911420665" target="_blank">
-        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp"> WhatsApp Us
+      <a href="https://wa.me/919911420665" target="_blank" rel="noopener">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" /> WhatsApp Us
       </a>
     </div>
-    <iframe class="map" src="https://www.google.com/maps?q=Tulip+Purple+Sector+69+Gurugram&output=embed"></iframe>
+    <iframe
+      class="map"
+      src="https://www.google.com/maps?q=Tulip+Purple+Sector+69+Gurugram&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
   </div>
 
   <footer>
