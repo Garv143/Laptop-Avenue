@@ -2,160 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Laptop Avenue</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      background-color: #f4f4f4;
     }
     header {
-      background: #0d47a1;
+      background-color: #232f3e;
       color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 20px;
+      text-align: center;
     }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Logo CSS */
     .logo {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: 700;
-      font-size: 28px;
-      color: #ffffff;  /* white on header */
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      cursor: default;
-      user-select: none;
+      width: 120px;
+      margin-bottom: 10px;
     }
-    .logo-icon {
-      width: 36px;
-      height: 36px;
-      border: 3px solid #ffffff;
-      border-radius: 6px;
-      position: relative;
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8');
+      background-size: cover;
+      background-position: center;
+      height: 250px;
     }
-    .logo-icon::before {
-      content: '';
-      position: absolute;
-      top: 8px;
-      left: 6px;
-      width: 24px;
-      height: 12px;
-      border-bottom: 3px solid #ffffff;
-      border-left: 3px solid #ffffff;
-      border-right: 3px solid #ffffff;
-      border-radius: 3px 3px 0 0;
-    }
-
-    .banner {
-      background: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-      margin-bottom: 1rem;
-    }
-    .section {
-      padding: 2rem;
+    .content {
+      padding: 20px;
       background: white;
-      margin: 1rem 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #003366;
     }
     .products img {
       height: 50px;
-      margin: 0 1rem 1rem 0;
-      vertical-align: middle;
-    }
-    h2 {
-      color: #0d47a1;
-      margin-bottom: 1rem;
-    }
-    h3 {
-      margin-top: 1.5rem;
-      color: #0d47a1;
+      margin: 10px;
     }
     ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 8px;
-      font-size: 1rem;
-    }
-    .map {
-      width: 100%;
-      height: 300px;
-      border: none;
-      margin-top: 1rem;
-      border-radius: 8px;
+      line-height: 1.6;
     }
     footer {
-      background: #0d47a1;
-      color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      user-select: none;
-    }
-    .contact-icons a {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      color: #0d47a1;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-    .contact-icons img {
-      height: 30px;
-      margin-right: 8px;
+      padding: 15px;
+      background-color: #232f3e;
+      color: white;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <div class="logo-icon"></div>
-      Laptop Avenue
-    </div>
-    <nav>
-      <a href="#products">Products</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <img class="logo" src="https://via.placeholder.com/150x50.png?text=Laptop+Avenue" alt="Laptop Avenue Logo" />
+    <h1>Welcome to Laptop Avenue</h1>
+    <p>Your One-Stop Shop for Laptops & Repairs - Online & Offline</p>
   </header>
 
-  <div class="banner">
-    All HP, Dell & Lenovo Laptops Available
-  </div>
+  <div class="hero"></div>
 
-  <div class="section" id="products">
+  <div class="content">
     <h2>Our Products</h2>
     <div class="products">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/HP_logo_2012.svg" alt="HP" />
+      <img src="https://1000logos.net/wp-content/uploads/2016/10/HP-Logo-500x281.png" alt="HP" />
       <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Lenovo_logo_2015.svg" alt="Lenovo" />
+      <img src="https://1000logos.net/wp-content/uploads/2017/03/Lenovo-Logo-500x281.png" alt="Lenovo" />
     </div>
 
     <h3>Popular Laptop Models & Prices</h3>
@@ -167,45 +79,25 @@
       <li><strong>Lenovo IdeaPad 3</strong> - Starting at ₹35,000</li>
       <li><strong>Lenovo ThinkPad X1 Carbon</strong> - Starting at ₹1,20,000</li>
     </ul>
-  </div>
 
-  <div class="section" id="services">
-    <h2>Services</h2>
-    <p>We provide expert repair and maintenance services for all types of laptops, desktops, and PCs. Both online and offline support available.</p>
-    <p>Our full servicing includes:</p>
+    <h2>Our Services</h2>
     <ul>
-      <li>SSD and HDD replacement or upgrade</li>
-      <li>Virus and malware removal</li>
-      <li>Software installation and upgrading</li>
-      <li>Windows OS installation and updates</li>
-      <li>Hardware troubleshooting and repair</li>
-      <li>Laptop and desktop motherboard repair</li>
-      <li>Data backup and recovery</li>
-      <li>Cleaning and maintenance</li>
+      <li>Laptop & Desktop Repair</li>
+      <li>Motherboard Repair & Replacement</li>
+      <li>SSD Upgrade & Installation</li>
+      <li>Virus Removal & Protection</li>
+      <li>Windows Installation & Update</li>
+      <li>Software Troubleshooting & Upgrade</li>
     </ul>
-  </div>
 
-  <div class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 <strong>Phone:</strong> <a href="tel:9911420665">9911420665</a></p>
-    <p>📍 <strong>Address:</strong> Shop No. 6, near Tulip Purple, Sector 69, Gurugram, Haryana 122101</p>
-    <p>💳 <strong>Payments:</strong> UPI accepted, card accepted sometimes</p>
-    <div class="contact-icons">
-      <a href="https://wa.me/919911420665" target="_blank" rel="noopener">
-        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" /> WhatsApp Us
-      </a>
-    </div>
-    <iframe
-      class="map"
-      src="https://www.google.com/maps?q=Tulip+Purple+Sector+69+Gurugram&output=embed"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+    <h2>Contact & Store Info</h2>
+    <p><strong>Phone:</strong> 9911420665</p>
+    <p><strong>Shop Address:</strong> Shop No. 6, Near Tulip Purple, Sector 69, Gurugram, Haryana – 122101</p>
+    <p><strong>Payments Accepted:</strong> UPI (online), sometimes Card (offline)</p>
   </div>
 
   <footer>
-    &copy; 2025 Laptop Avenue. All rights reserved.
+    &copy; 2025 Laptop Avenue | All Rights Reserved
   </footer>
 </body>
 </html>
