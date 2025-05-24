@@ -3,213 +3,400 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Laptop Avenue</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Laptop Avenue - Premium Digital Catalog</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
     body {
+      margin: 0; padding: 0;
+      background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
       font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      color: #f0e6d2;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
     }
     header {
-      background: #0d47a1;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      background: #000000cc;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 3px solid gold;
     }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin: 0;
+      color: gold;
+      letter-spacing: 3px;
+      text-shadow: 0 0 8px #ffd700;
     }
-    nav a:hover {
-      text-decoration: underline;
+    header p.welcome {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 8px 0 0;
+      color: #d4af37;
+      font-weight: 500;
+      text-shadow: 0 0 6px #b8860b;
     }
-
-    .logo {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    main {
+      flex-grow: 1;
+      max-width: 960px;
+      margin: 30px auto 40px;
+      padding: 0 20px;
+    }
+    section {
+      background: #111111dd;
+      margin-bottom: 40px;
+      border-radius: 15px;
+      padding: 25px 30px;
+      box-shadow: 0 0 15px 3px #b8860b88;
+    }
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      color: gold;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 8px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: #222222ee;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #b8860bbb;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px gold;
+    }
+    .product-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      background: #111;
+      padding: 10px;
+    }
+    .product-info {
+      padding: 15px 12px;
+      color: #f0e6d2;
+    }
+    .product-info h3 {
+      margin: 0 0 8px;
+      font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 28px;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      cursor: default;
-      user-select: none;
+      font-size: 1.3rem;
+      color: gold;
     }
-    .logo-icon {
-      width: 36px;
-      height: 36px;
-      border: 3px solid #ffffff;
-      border-radius: 6px;
+    .product-info p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #d4af37cc;
+    }
+    /* Services */
+    .services-list {
+      list-style: none;
+      padding: 0;
+      color: #f0e6d2;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .services-list li {
+      margin-bottom: 10px;
+      padding-left: 25px;
       position: relative;
     }
-    .logo-icon::before {
-      content: '';
+    .services-list li::before {
+      content: '✔';
+      color: gold;
       position: absolute;
-      top: 8px;
-      left: 6px;
-      width: 24px;
-      height: 12px;
-      border-bottom: 3px solid #ffffff;
-      border-left: 3px solid #ffffff;
-      border-right: 3px solid #ffffff;
-      border-radius: 3px 3px 0 0;
-    }
-
-    .banner {
-      background: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2rem;
+      left: 0;
       font-weight: bold;
-      text-align: center;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-      margin-bottom: 1rem;
-      padding: 0 1rem;
     }
-    .section {
-      padding: 2rem;
-      background: white;
-      margin: 1rem 2rem;
+    /* Contact */
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 1.1rem;
+      color: #d4af37cc;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 25px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 4px 12px #128C7Eaa;
+      transition: background-color 0.3s ease;
     }
-    .products img {
-      height: 50px;
-      margin: 0 1rem 1rem 0;
-      vertical-align: middle;
+    .whatsapp-btn:hover {
+      background-color: #128c7e;
     }
-    h2 {
-      color: #0d47a1;
-      margin-bottom: 1rem;
+    /* Reviews */
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      color: #f0e6d2;
     }
-    h3 {
-      margin-top: 1.5rem;
-      color: #0d47a1;
+    .review {
+      background: #222222dd;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px #b8860bbb;
     }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
+    .review p {
+      margin: 0 0 8px;
+      font-style: italic;
     }
-    ul li {
-      margin-bottom: 8px;
-      font-size: 1rem;
+    .review .author {
+      font-weight: 700;
+      color: gold;
+      text-align: right;
     }
-    .map {
+    /* Map */
+    .map-container iframe {
       width: 100%;
-      height: 300px;
+      height: 320px;
       border: none;
-      margin-top: 1rem;
-      border-radius: 8px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px 3px #b8860b88;
     }
     footer {
-      background: #0d47a1;
-      color: white;
+      background: #000000cc;
+      color: #d4af37;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      user-select: none;
+      padding: 18px 15px;
+      font-size: 1rem;
+      border-top: 3px solid gold;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1.5px;
     }
-    .contact-icons a {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      color: #0d47a1;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-    .contact-icons img {
-      height: 30px;
-      margin-right: 8px;
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section h2 {
+        font-size: 1.5rem;
+      }
+      .product-card img {
+        height: 140px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <div class="logo-icon"></div>
-      Laptop Avenue
-    </div>
-    <nav>
-      <a href="#products">Products</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Laptop Avenue</h1>
+    <p class="welcome">"Welcome to Laptop Avenue — Where premium tech meets unmatched service!"</p>
   </header>
 
-  <div class="banner">
-    Welcome to Laptop Avenue-
-    
-                    You are one step away to buy a Laptop and get it repaired (Online & Offline)
-  </div>
+  <main>
+    <section>
+      <h2>Our Premium Products</h2>
+      <div class="products-grid">
+        <!-- Dell -->
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/71dS5kD9jqL._AC_SL1500_.jpg" alt="Dell Inspiron 15 3501" />
+          <div class="product-info">
+            <h3>Dell Inspiron 15 3501</h3>
+            <p>Intel i5 11th Gen, 8GB RAM, 512GB SSD</p>
+            <p>Price: ₹45,990</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/61SnRTYBvSL._AC_SL1500_.jpg" alt="Dell Vostro 3401" />
+          <div class="product-info">
+            <h3>Dell Vostro 3401</h3>
+            <p>Intel i5 10th Gen, 8GB RAM, 1TB HDD</p>
+            <p>Price: ₹39,499</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/71xWJ6yPj7L._AC_SL1500_.jpg" alt="Dell G3 15 Gaming" />
+          <div class="product-info">
+            <h3>Dell G3 15 Gaming</h3>
+            <p>Intel i7 10th Gen, 16GB RAM, 512GB SSD</p>
+            <p>Price: ₹68,499</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/81Kq5ZSm+NL._AC_SL1500_.jpg" alt="Dell XPS 13" />
+          <div class="product-info">
+            <h3>Dell XPS 13</h3>
+            <p>Intel i7 11th Gen, 16GB RAM, 1TB SSD</p>
+            <p>Price: ₹1,05,999</p>
+          </div>
+        </div>
+        <!-- Lenovo -->
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/81vViXCBsML._AC_SL1500_.jpg" alt="Lenovo IdeaPad 3" />
+          <div class="product-info">
+            <h3>Lenovo IdeaPad 3</h3>
+            <p>AMD Ryzen 5 5500U, 8GB RAM, 512GB SSD</p>
+            <p>Price: ₹42,999</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/71Cd+JdYaXL._AC_SL1500_.jpg" alt="Lenovo ThinkBook 14" />
+          <div class="product-info">
+            <h3>Lenovo ThinkBook 14</h3>
+            <p>Intel i5 11th Gen, 16GB RAM, 512GB SSD</p>
+            <p>Price: ₹58,999</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/71-9Evz1+ML._AC_SL1500_.jpg" alt="Lenovo Legion 5" />
+          <div class="product-info">
+            <h3>Lenovo Legion 5</h3>
+            <p>AMD Ryzen 7 5800H, 16GB RAM, 1TB SSD</p>
+            <p>Price: ₹74,999</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/81ch46T0B+L._AC_SL1500_.jpg" alt="Lenovo Yoga Slim 7" />
+          <div class="product-info">
+            <h3>Lenovo Yoga Slim 7</h3>
+            <p>Intel i7 11th Gen, 16GB RAM, 512GB SSD</p>
+            <p>Price: ₹79,999</p>
+          </div>
+        </div>
+        <!-- HP -->
+        <div class="product-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/81oHnZaCiqL._AC_SL1500_.jpg" alt="HP Pavilion 15" />
+          <div class="product-info">
+            <h3>HP Pavilion 15</h3>
+            <p>Intel i5 11th Gen, 8GB RAM, 512GB SSD</p>
+            <p>Price: ₹55,499</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/81FQ+K8OcQL._AC_SL1500_.jpg" alt="HP Envy x360" />
+          <div class="product-info">
+            <h3>HP Envy x360</h3>
+            <p>AMD Ryzen 7, 16GB RAM, 1TB SSD</p>
+            <p>Price: ₹84,999</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/81rZhShk8NL._AC_SL1500_.jpg" alt="HP Omen 15" />
+          <div class="product-info">
+            <h3>HP Omen 15</h3>
+            <p>Intel i7 10th Gen, 16GB RAM, 512GB SSD</p>
+            <p>Price: ₹91,999</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/71v5sTnyvOL._AC_SL1500_.jpg" alt="HP Spectre x360" />
+          <div class="product-info">
+            <h3>HP Spectre x360</h3>
+            <p>Intel i7 11th Gen, 16GB RAM, 1TB SSD</p>
+            <p>Price: ₹1,29,999</p>
+          </div>
+        </div>
+        <!-- Asus -->
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/81H2cQ5f6eL._AC_SL1500_.jpg" alt="ASUS ROG Strix G15" />
+          <div class="product-info">
+            <h3>ASUS ROG Strix G15</h3>
+            <p>AMD Ryzen 7 5800H, 16GB RAM, 1TB SSD</p>
+            <p>Price: ₹1,29,990</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/91rF7bDmiBL._AC_SL1500_.jpg" alt="ASUS ZenBook 14" />
+          <div class="product-info">
+            <h3>ASUS ZenBook 14</h3>
+            <p>Intel i7 11th Gen, 16GB RAM, 512GB SSD</p>
+            <p>Price: ₹94,999</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/61xfS8J9VhL._AC_SL1500_.jpg" alt="ASUS VivoBook 15" />
+          <div class="product-info">
+            <h3>ASUS VivoBook 15</h3>
+            <p>Intel i5 11th Gen, 8GB RAM, 512GB SSD</p>
+            <p>Price: ₹52,499</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/81o8vJzNoUL._AC_SL1500_.jpg" alt="ASUS TUF Gaming F15" />
+          <div class="product-info">
+            <h3>ASUS TUF Gaming F15</h3>
+            <p>Intel i7 10th Gen, 16GB RAM, 1TB SSD</p>
+            <p>Price: ₹83,999</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="section" id="products">
-    <h2>Our Products</h2>
-    <div class="products">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/HP_logo_2012.svg" alt="HP" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Lenovo_logo_2015.svg" alt="Lenovo" />
-    </div>
+    <section>
+      <h2>Our Repairing Services</h2>
+      <ul class="services-list">
+        <li>Laptop Format / Windows Installation</li>
+        <li>Battery Replacement</li>
+        <li>Thermal Paste & Cleaning</li>
+        <li>SSD / RAM Upgrade</li>
+        <li>Screen Replacement</li>
+        <li>Keyboard / Hinge Repair</li>
+        <li>WiFi / Motherboard Issue Check</li>
+        <li>Diagnostic & Fault Detection</li>
+        <li>Pickup & Delivery Service Available</li>
+        <li>Virus & Malware Removal</li>
+        <li>Data Recovery & Backup</li>
+        <li>Software Installation & Updates</li>
+      </ul>
+    </section>
 
-    <h3>Popular Laptop Models & Prices</h3>
-    <ul>
-      <li><strong>HP Pavilion 15</strong> - Starting at ₹45,000</li>
-      <li><strong>HP Envy x360</strong> - Starting at ₹70,000</li>
-      <li><strong>Dell Inspiron 14</strong> - Starting at ₹40,000</li>
-      <li><strong>Dell XPS 13</strong> - Starting at ₹95,000</li>
-      <li><strong>Lenovo IdeaPad 3</strong> - Starting at ₹35,000</li>
-      <li><strong>Lenovo ThinkPad X1 Carbon</strong> - Starting at ₹1,20,000</li>
-    </ul>
-  </div>
+    <section>
+      <h2>Customer Reviews</h2>
+      <div class="reviews">
+        <div class="review">
+          <p>"Excellent service, fast and reliable. Laptop Avenue saved my laptop!"</p>
+          <div class="author">— Rajesh K.</div>
+        </div>
+        <div class="review">
+          <p>"Wide range of laptops with great prices. Highly recommended store."</p>
+          <div class="author">— Meena S.</div>
+        </div>
+        <div class="review">
+          <p>"Pickup and delivery service made repair hassle-free. Very professional."</p>
+          <div class="author">— Anil M.</div>
+        </div>
+      </div>
+    </section>
 
-  <div class="section" id="services">
-    <h2>Services</h2>
-    <p>We provide expert repair and maintenance services for all types of laptops, desktops, and PCs. Both online and offline support available.</p>
-    <p>Our full servicing includes:</p>
-    <ul>
-      <li>SSD and HDD replacement or upgrade</li>
-      <li>Virus and malware removal</li>
-      <li>Software installation and upgrading</li>
-      <li>Windows OS installation and updates</li>
-      <li>Hardware troubleshooting and repair</li>
-      <li>Laptop and desktop motherboard repair</li>
-      <li>Data backup and recovery</li>
-      <li>Cleaning and maintenance</li>
-    </ul>
-  </div>
+    <section>
+      <h2>Find Us Here</h2>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.479034911407!2d77.01201061503145!3d28.466248782421485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1c871bb182f7%3A0xb2d1982bca713a6c!2sLaptop%20Avenue!5e0!3m2!1sen!2sin!4v1684825699990!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Laptop Avenue Location"
+        ></iframe>
+      </div>
+    </section>
 
-  <div class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 <strong>Phone:</strong> <a href="tel:9911420665">9911420665</a></p>
-    <p>📍 <strong>Address:</strong> Shop No. 6, near Tulip Purple, Sector 69, Gurugram, Haryana 122101</p>
-    <p>💳 <strong>Payments:</strong> UPI accepted, card accepted sometimes</p>
-    <div class="contact-icons">
-      <a href="https://wa.me/919911420665" target="_blank" rel="noopener">
-        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" /> WhatsApp Us
-      </a>
-    </div>
-    <iframe
-      class="map"
-      src="https://www.google.com/maps?q=Tulip+Purple+Sector+69+Gurugram&output=embed"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
+    <section>
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <p>📍 Shop No. 6, near Tulip Purple, Sector 69, Gurugram, Haryana 122101</p>
+        <p>💳 Payments: UPI accepted, card accepted sometimes</p>
+        <a class="whatsapp-btn" href="https://wa.me/919911420665" target="_blank" rel="noopener">Chat with Lokesh on WhatsApp</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Laptop Avenue. All rights reserved. <br />
-    Website owned and managed by <strong>Lokesh Kashyap</strong>.
+    © 2025 Laptop Avenue | Owner: Lokesh Kashyap
   </footer>
 </body>
 </html>
