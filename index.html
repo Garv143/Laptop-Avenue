@@ -1,89 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Laptop Avenue</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f2f2f2;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Laptop Avenue - Luxury Digital Catalog</title>
+<style>
+  /* Reset & basics */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    color: #333;
+  }
+  header {
+    background: #0b3d91;
+    color: white;
+    text-align: center;
+    padding: 30px 15px 15px;
+    box-shadow: 0 5px 15px rgba(11,61,145,0.4);
+    position: relative;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+  header .owner {
+    font-size: 1rem;
+    margin-top: 5px;
+    font-weight: 600;
+    color: #aad1ff;
+  }
+  header .quote {
+    font-style: italic;
+    margin-top: 12px;
+    font-size: 1.2rem;
+    color: #cfd8f7;
+  }
+  main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 15px 60px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+  }
+  section {
+    margin-bottom: 40px;
+  }
+  section h2 {
+    border-bottom: 3px solid #0b3d91;
+    padding-bottom: 10px;
+    color: #0b3d91;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
 
-    header {
-      background: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      user-select: none;
-    }
+  /* Products grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+  }
+  .product-card {
+    background: #f8faff;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(11,61,145,0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(11,61,145,0.3);
+  }
+  .product-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
+    background: white;
+    padding: 10px;
+  }
+  .product-info {
+    padding: 15px 20px 20px;
+  }
+  .product-info h3 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+    color: #073b90;
+  }
+  .product-info p {
+    margin: 4px 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  .product-info p:last-child {
+    font-weight: 700;
+    color: #0b3d91;
+  }
 
-    h1 {
-      margin: 0;
-      text-shadow: 2px 2px 5px #000;
-    }
+  /* Services list */
+  .services-list {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+  }
+  .services-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+  }
+  .services-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #0b3d91;
+    font-weight: 700;
+  }
 
-    .container {
-      max-width: 1100px;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
+  /* Reviews */
+  .reviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .review {
+    flex: 1 1 30%;
+    background: #eef4ff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 12px rgba(11,61,145,0.15);
+    font-style: italic;
+    color: #0b3d91;
+    position: relative;
+  }
+  .review::before {
+    content: "“";
+    font-size: 3rem;
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    color: #0b3d91;
+    opacity: 0.15;
+  }
+  .review .author {
+    margin-top: 12px;
+    font-weight: 700;
+    color: #073b90;
+    font-style: normal;
+    text-align: right;
+  }
 
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-    }
+  /* Map container */
+  .map-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+  }
 
-    .product-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-      width: 300px;
-      transition: transform 0.3s ease;
-    }
+  /* Contact */
+  .contact-info {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    line-height: 1.5;
+  }
+  .contact-info p {
+    margin: 8px 0;
+  }
+  .whatsapp-btn {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 15px;
+    box-shadow: 0 8px 15px #16a34a;
+    transition: background 0.3s ease;
+  }
+  .whatsapp-btn:hover {
+    background: #128c34;
+  }
 
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-    }
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    background: #0b3d91;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+  }
 
-    .product-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: contain;
-      background: #fff;
-      padding: 20px;
+  @media (max-width: 700px) {
+    .reviews {
+      flex-direction: column;
     }
-
-    .product-info {
-      padding: 15px 20px;
-      color: #333;
-    }
-
-    .product-info h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      color: #0077cc;
-    }
-
-    .product-info p {
-      margin: 5px 0;
-      font-size: 1rem;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-
-<header>
 
 <header>
   <h1>Laptop Avenue</h1>
@@ -257,7 +380,7 @@
 
     <div class="map-container">
       <iframe
-        src="https://www.google.com/maps?sca_esv=7362c71c7debaa22&rlz=1C1GCEU_enIN1161IN1161&output=search&q=laptop+avenue&source=lnms&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZjSkgYzz5-5RrRWAIniWd7tzPwkE1KJWcRvaH01D-XIV_XTVF-oSHL9JOIxmL0R4GkuY9Ar8W99bwwQ14xcD0j0-9I5KjJHo6wL7kT0Ululu02A-ewzjsOIVTMwsfsXbtnd6Er_2puXFaaKkVfthyKNdbUXBhjk-l06dwi7lEztu56kIX6Pg_5RAhZ7c2jrbDeYpxtw&entry=mc&ved=1t:200715&ictx=111
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.1269303637756!2d77.05313781503314!3d28.479256682502303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e5f6a74bd01%3A0x1826e3433ac27a5a!2sLaptop%20Avenue!5e0!3m2!1sen!2sin!4v1687464591234!5m2!1sen!2sin"
         width="100%"
         height="100%"
         style="border:0;"
